@@ -1,0 +1,16 @@
+@font-face {
+    font-family:'Hallowed' ;
+    src: url('Fontes/Hallowed Crawler.otf') format('opentype') , url('Fontes/Hallowed Crawler.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    font-family:'Hallowed', Times, serif;
+    font-size: 3em;
+    font-weight: normal;
+    
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>midia em HTML5</title>
+    <link rel="shortcut icon" href="L.ico.ico" type="image/x-icon">
+</head>
+<body>
+    <h1>imagem dinamica</h1>
+    <p><big>tenta abri esse site varios dispostivos diferente ou simplesmente  aumenta e diminua o tamanho do seu navegador </big></p>
+    <picture>
+       <source media="(max-width:750px )" srcset="imagens/foto-p.png" type="image/png">
+       <source media="(max-width:1050px )" srcset="imagens/foto-m.png" type="image/png">
+        <img src="imagens/foto-g.png" alt="imagem flexivel">
+    </picture>
+
+    <h1>vamos  reproduzir audios</h1>
+    <p><strong><big><abbr title="usando a tag source">vamos aprende reproduzir audios em HTML5</abbr></big></strong></p>
+    <audio preload="auto" autoplay controls loop>
+       <source src="midia/vitalwhalesunicornheads.mp3" type="audio/mpeg">
+       <source src="midia/guanacast-33.ogg" type="audio/ogg">
+       <source src="midia/guanacast-33.wav" type="audio/wav">
+       
+    </audio>
+    <p><big><strong>Infelimente seu navegador nao consegue reproduzir audios</strong></big>. <a href="midia/vitalwhalesunicornheads.mp3" download="vitalwhalesunicornheads.mp3"type=application/mp3>clica aqui para baixar o arquivo</a></p>
+</body>
+</html>
