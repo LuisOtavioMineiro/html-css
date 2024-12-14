@@ -30,7 +30,7 @@ body{
     font-family: var(--fonte-padrao);
 }
 
-a.externo::after{
+.a externo::after{
     content: '\00A0\1F517';
 }
 
