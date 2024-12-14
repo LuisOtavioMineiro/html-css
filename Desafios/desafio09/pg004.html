@@ -4,37 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>python</title>
-</head>
-<body>
     <link rel="shortcut icon" href="favicon/L.ico.ico" type="image/x-icon">
     <style>
-        *{
-            padding: 1.5px;
-            margin: 1.5px;
-        }
-        body{
-            display: flex;
-            background-color: black;
-            margin: auto;
-            align-items: center;
-            justify-content: center;
-        }
-        .video{
-            margin: 0px -20px 30px -20px;
-            padding: 20px;
+        .video-container{
             position: relative;
-            min-height: 800px;
-            max-width: 30px;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
         }
-        .video > iframe{
+        .video-container iframe{
             position: absolute;
-            width: 90%;
-            height: 90%;
-        }
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
     </style>
-    <div class="videoo">
-        <iframe width="400" height="315" src="https://www.youtube.com/embed/S9uPNppGsGo?si=LiK4CP-eTCsDa-QA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <a href="index.html"><img src="imagens/voltar.png" alt="inicio">clicar aqui Para voltar</a>
+</head>
+<body>
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/S9uPNppGsGo?si=4vqIYa_HAINh7pdO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 </body>
 </html>
