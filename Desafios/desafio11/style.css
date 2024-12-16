@@ -23,4 +23,16 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    animation: flutuar 4s ease-in-out infinite;
+}
+@keyframes flutuar {
+    0% {
+        transform:translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-20px);
+    }
+    100% {
+        transform: translateX(-50) translateY(0);
+    }
 }
