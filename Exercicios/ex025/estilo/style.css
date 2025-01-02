@@ -1,0 +1,47 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: linear-gradient(to right, rgb(20,147,220), rgb(17,54,71));
+    color: white;
+}
+fieldset{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0,0.8);
+    padding: 35px;
+    margin: auto;
+    border-radius: 15px;
+    width: 20%;
+    border: 3px solid dodgerblue;
+    animation: rgbAnimation 4.5s infinite;
+}
+.botao {
+    position: absolute;
+    bottom: 37%;
+    right: 48%;
+    font-size: 1.9em;
+    border-radius: 15px;
+}
+@keyframes  rgbAnimation {
+    0% {
+        background-color: rgba(0,0,0,0.8);
+        border-color: rgba(0, 0, 255, 1);
+    }
+    25% {
+        background-color: rgba(0,0,0,0.8);
+        border-color: rgba(255, 0, 0, 1);
+    }
+    33% {
+        background-color: rgba(17,54,71,0.8);
+        border-color: rgba(0, 255, 0, 1) 
+    }
+    66% {
+        background-color: rgba(50,50,50,0.8);
+        border-color: rgba(139,0,139);
+    }
+    100% {
+        background-color: rgba(0,0,0,0.8);
+        border-color: rgb(255,140,0);
+    }
+}
