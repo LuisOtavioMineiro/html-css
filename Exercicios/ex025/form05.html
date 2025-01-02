@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <form action="cadastrp.php" method="get" autocomplete="on">
+        <fieldset>
+            <legend>Sexo</legend>
+            <input type="radio" name="sexo" id="isexm"> <label for="isexm">Masculino</label> <br>
+            <input type="radio" name="sexo" id="isexf"> <label for="isexf">Feminina</label>  <br>
+        </fieldset>
+        <fieldset>
+            <legend>Esportes</legend>
+            <input type="checkbox" name="esfut" id="iesfut"> <label for="iesfut">Futebool</label>  <br>
+            <input type="checkbox" name="esten" id="iesten"> <label for="iesten">Tenis</label>  <br>
+            <input type="checkbox" name="esnat" id="iesnat"> <label for="iesnat">natação</label>  <br>
+            <input type="checkbox" name="esskat" id="ieskat"> <label for="ieskat">skate</label>  <br>
+            <input type="checkbox" name="estir" id="iestir"> <label for="iestir">Tiro com arco</label>  <br>
+
+        </fieldset>
+        <p>
+            <input type="submit" value="enviar">
+            <input type="reset" value="reset">
+        </p>
+    </form>
+</body>
+</html>

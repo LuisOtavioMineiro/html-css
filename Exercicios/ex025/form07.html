@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forumulario</title>
+</head>
+<body>
+    <form action="cadastro.php" method="post">
+        <p>
+            <label for="iest">Estado</label>
+            <select name="estado" id="iest">
+                <option value="">---Escolha---</option>
+                <optgroup label="Região do Sudeste">
+                    <option value="ep">Espírito Santo</option>
+                    <option value="mg">Minas gerais</option>
+                    <option value="rj">Rio de Janeiro</option>
+                    <option value="sp">São Paulo</option>
+                </optgroup>
+                
+                <optgroup label="Região Sul">
+                    <option value="pa">Paraná</option>
+                    <option value="sul">Rio Grande DO Sul</option>
+                    <option value="sa">Santa Catarina</option>
+                </optgroup>
+                <optgroup label="Região do Nordeste">
+                    <option value="al">Alagoas</option>
+                    <option value="bh">Bahia</option>
+                    <option value="ce">Ceará</option>
+                    <option value="ma">Maranhão</option>
+                    <option value="pa">Paraíba</option>
+                    <option value="pe">Pernambuco</option>
+                    <option value="pi">Piauí</option>
+                    <option value="rn">Rio Grande Do Sul</option>
+                    <option value="sr">Sergipe</option>
+                </optgroup>
+                <optgroup label="Região Norte">
+                    <option value="ac">Acre</option>
+                    <option value="am">Amapá</option>
+                    <option value="az">Amazonas</option>
+                    <option value="pa">Pará</option>
+                    <option value="rd">Rondônia</option>
+                    <option value="ro">Roraima</option>
+                    <option value="to">Tocatins</option>
+                </optgroup>
+                <optgroup label="Região Centro-Oeste">
+                    <option value="df">Distrito Federal</option>
+                    <option value="go">Goiás</option>
+                    <option value="mg">Mato Grosso</option>
+                    <option value="ms">Mato Grosso do Sul</option>
+                </optgroup>
+            </select>
+            <p>
+                <label for="iprof">Profissão</label>
+                <input type="text" name="prof" id="iprof" list="istprof" placeholder="Escolhar">
+                <datalist id="istprof">
+                        <option >Administração</option>
+                        <option>Administração Pública</option>
+                        <option>Agronegócios e Agropecuária</option>
+                        <option>Ciências Aeronáuticas</option>
+                        <option>Ciências Atuariais</option>
+                        <option>Ciências Contábeis</option>
+                        <option>Ciências Econômicas</option>
+                        <option>Comércio Exterior</option>
+                        <option>Defesa e Gestão Estratégica Internacional</option>
+                        <option>Gastronomia</option>
+                        <option>Gestão Comercial</option>
+                        <option>Gestão de Recursos Humanos</option>
+                        <option>Gestão de Segurança Privada</option>
+                        <option>Gestão de Seguros</option>
+                        <option>Gestão de Turismo</option>
+                        <option>Gestão Financeira</option>
+                        <option>Gestão Pública</option>
+                        <option>Hotelaria</option>
+                        <option>Logística</option>
+                        <option>Marketing</option>
+                        <option>Negócios Imobiliários</option>
+                        <option>Pilotagem profissional de aeronaves</option>
+                        <option>Processos Gerenciais</option>
+                        <option>Segurança Pública</option>
+                        <option>Turismo</option>
+                </datalist>
+            </p>
+        </p>
+        <p>
+            <label for="imsg">Mensagem</label><br>
+            <textarea name="msg" id="imsg" cols="30" rows="10"></textarea>
+        </p>
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+</body>
+</html>
