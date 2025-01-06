@@ -14,7 +14,7 @@ header > h1 {
     text-align: center;
 }
 menu {
-    display: block;
+    display: none;
 }
 menu > ul {
     list-style-type: none;
@@ -46,4 +46,16 @@ article > P {
     text-align: justify;
     margin-bottom: 20px;
     text-indent: 50px;
+}
+#icone {
+    background-color: rgb(48, 48, 48);
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+}
+#icone:hover {
+    background-color: white;
+    color: black;
 }
