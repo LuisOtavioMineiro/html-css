@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mias Formulario</title>
+  </head>
+  <body>
+    <form action="" method="get">
+      <h2>Label</h2>
+
+      <label for="nome"
+        >Nome:
+        <input
+          type="text"
+          id="nome1"
+          name="nome"
+          placeholder="Digite seu nome"
+        />
+      </label>
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="emaill" />
+      <br />
+      <h2>Mais elementos de formulario</h2>
+
+      <br />
+      Genero:
+
+      <input type="radio" name="genero" value="feminino" id="feminino" />
+      <label for="feminino">Feminino</label>
+      <input type="radio" name="genero" value="masculino" id="masculino" />
+      <label for="masculino">Masculino</label>
+      <br /><br />
+
+      <br />Estilo Musical:
+      <input type="checkbox" name="estilo" value="pop" id="pop" />
+      <label for="pop">pop</label>
+
+      <input type="checkbox" name="estilo" value="funk" id="funk" />
+      <label for="funk">funk</label>
+
+      <input type="checkbox" name="estilo" value="trep" id="trep" />
+      <label for="trep">trep</label>
+
+      <br /><br />
+
+      estado:
+      <select name="estado">
+        <option value="">Selecione...</option>
+        <option value="sp">sao paulo</option>
+        <option value="rj">rio de janeiro</option>
+        <option value="mg">minas gerais</option>
+      </select>
+
+      <br /><br />
+      upload de arquivo:
+      <input type="file" name="arquivo" />
+
+      <br /><br />
+      <input type="submit" value="Cadastrar" />
+    </form>
+
+    <form action="" method="post">
+      <h2>fieldset e legend</h2>
+      <fieldset>
+        <legend>Informações pessoais</legend>
+        <label for="email2">Email:</label>
+        <input type="email" name="email" id="email2" />
+
+         <label for="nome2"
+        >Nome:
+        <input
+          type="text"
+          id="nome2"
+          name="nome"
+          placeholder="Digite seu nome"
+        />
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
+        <button type="submit">Enviar</button>
+      </fieldset>
+    </form>
+  </body>
+</html>
