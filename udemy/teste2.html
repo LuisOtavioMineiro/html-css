@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animação de Imagem com Efeito de Desenho</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define a fonte Inter para todo o documento */
+        body {
+            font-family: "Inter", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5; /* Cor de fundo suave */
+        }
+
+        /* Contêiner para a imagem, para aplicar a sombra e o arredondamento */
+        .image-container {
+            width: 550px; /* Largura do contêiner */
+            height: 500px; /* Altura do contêiner */
+            border-radius: 12px; /* Cantos arredondados para o contêiner */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+            overflow: hidden; /* Garante que a imagem não saia dos limites do contêiner */
+            position: relative; /* Necessário para posicionar o pseudo-elemento de "esboço" */
+        }
+
+        /* Estilos da imagem e da animação de desenho */
+        .image-drawing {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Garante que a imagem cubra o contêiner */
+            border-radius: 12px; /* Cantos arredondados */
+
+            /* Estado inicial do efeito de desenho:
+               - clip-path: esconde a imagem da direita, como se estivesse cortada à esquerda.
+               - filter: grayscale(100%): a imagem começa em preto e branco.
+               - transform: scale(0.9): a imagem começa ligeiramente menor.
+            */
+            clip-path: inset(0% 100% 0% 0%);
+            filter: grayscale(100%);
+            transform: scale(0.9);
+
+            /* Transições para as propriedades animadas:
+               - clip-path e filter demoram 1.5s para o efeito de "desenho".
+               - transform (escala) é mais rápido, 0.3s, para responsividade.
+            */
+            transition: clip-path 1.5s ease-out, filter 1.5s ease-out, transform 0.3s ease-out;
+        }
+
+        /* Efeito ao passar o mouse sobre o contêiner */
+        .image-container:hover .image-drawing {
+            /* Estado final do efeito de desenho:
+               - clip-path: inset(0% 0% 0% 0%): a imagem é totalmente revelada.
+               - filter: grayscale(0%): a imagem fica totalmente colorida.
+               - transform: scale(1.05): a imagem aumenta ligeiramente.
+            */
+            clip-path: inset(0% 0% 0% 0%);
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        /* Pseudo-elemento para criar um efeito de borda tracejada, simulando um esboço */
+        .image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px dashed #9ca3af; /* Borda tracejada cinza */
+            border-radius: 12px;
+            box-sizing: border-box; /* Garante que a borda não aumente o tamanho do elemento */
+            opacity: 0; /* Inicialmente invisível */
+            transition: opacity 0.3s ease-out; /* Transição suave para a opacidade */
+            pointer-events: none; /* Permite que o mouse interaja com a imagem por baixo */
+        }
+
+        /* Torna a borda tracejada visível ao passar o mouse */
+        .image-container:hover::before {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="image-container">
+        <img
+            src="css3/img/WhatsApp Image 2025-05-28 at 20.41.56.jpeg"
+            alt="Imagem para Animação de Desenho"
+            class="image-drawing"
+            onerror="this.onerror=null;this.src='https://placehold.co/650x500/F97316/FFFFFF?text=Erro+ao+Carregar';"
+        />
+    </div>
+</body>
+</html>

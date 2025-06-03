@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio Pessoal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define Inter font for the entire document */
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f0f2f5; /* Soft background color */
+            color: #333; /* Default text color */
+        }
+
+        /* Styles for the drawing effect image container (for portfolio projects) */
+        .drawing-image-container {
+            width: 100%; /* Full width of its parent */
+            padding-bottom: 75%; /* 4:3 aspect ratio (height / width * 100) */
+            position: relative;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Styles for the image with drawing effect (common to all drawing images) */
+        .drawing-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px; /* Default for rectangular images */
+
+            /* Initial state for drawing effect */
+            clip-path: inset(0% 100% 0% 0%);
+            filter: grayscale(100%);
+            transform: scale(0.9);
+
+            /* Transitions for animated properties */
+            transition: clip-path 1.5s ease-out, filter 1.5s ease-out, transform 0.3s ease-out;
+        }
+
+        /* Hover effect for drawing animation (common to all drawing images) */
+        .drawing-image-container:hover .drawing-image,
+        .profile-drawing-container:hover .drawing-image { /* Apply to profile too */
+            clip-path: inset(0% 0% 0% 0%);
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        /* Pseudo-element for dashed border sketch effect (common to all drawing containers) */
+        .drawing-image-container::before,
+        .profile-drawing-container::before { /* Apply to profile too */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px dashed #9ca3af; /* Gray dashed border */
+            border-radius: 12px; /* Default for rectangular containers */
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+            pointer-events: none;
+        }
+
+        /* Make dashed border visible on hover (common to all drawing containers) */
+        .drawing-image-container:hover::before,
+        .profile-drawing-container:hover::before { /* Apply to profile too */
+            opacity: 1;
+        }
+
+        /* Custom styles specifically for the profile picture drawing container */
+        .profile-drawing-container {
+            width: 256px; /* Matches w-64 (256px) */
+            height: 256px; /* Matches h-64 (256px) */
+            position: relative;
+            border-radius: 9999px; /* Make it perfectly round */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 0 auto; /* Center the image within its parent div */
+        }
+
+        /* Ensure the image inside the profile container is also round */
+        .profile-drawing-container .drawing-image {
+            border-radius: 9999px;
+        }
+
+        /* Ensure the pseudo-element for profile container is also round */
+        .profile-drawing-container::before {
+            border-radius: 9999px;
+        }
+
+        /* Custom scroll-snap for smooth section scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        section {
+            scroll-snap-align: start;
+        }
+    </style>
+</head>
+<body class="leading-relaxed">
+    <header class="bg-white shadow-md fixed w-full z-10">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-600">Meu Portfólio</a>
+            <div class="space-x-4">
+                <a href="#home" class="text-gray-700 hover:text-indigo-600 transition duration-300">Início</a>
+                <a href="#about" class="text-gray-700 hover:text-indigo-600 transition duration-300">Sobre Mim</a>
+                <a href="#skills" class="text-gray-700 hover:text-indigo-600 transition duration-300">Habilidades</a>
+                <a href="#portfolio" class="text-gray-700 hover:text-indigo-600 transition duration-300">Portfólio</a>
+                <a href="#contact" class="text-gray-700 hover:text-indigo-600 transition duration-300">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <section id="home" class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white flex items-center justify-center min-h-screen py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4 animate-fade-in-up">Olá, sou [Seu Nome]</h1>
+                <p class="text-xl md:text-2xl mb-8 animate-fade-in-up delay-200">Desenvolvedor Web e Criador de Experiências Digitais.</p>
+                <a href="#portfolio" class="bg-white text-indigo-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 animate-fade-in-up delay-400">Ver Meus Projetos</a>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Sobre Mim</h2>
+                <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                    <div class="md:w-1/3 mb-8 md:mb-0">
+                        <div class="profile-drawing-container">
+                            <img src="css3/img/WhatsApp Image 2025-05-28 at 20.41.56.jpeg" alt="Sua Foto" class="drawing-image" onerror="this.onerror=null;this.src='https://placehold.co/400x400/F97316/FFFFFF?text=Erro+ao+Carregar';" />
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 text-lg text-gray-700 leading-relaxed">
+                        <p class="mb-4">Sou um desenvolvedor web apaixonado por criar soluções inovadoras e interfaces de usuário intuitivas. Com experiência em [mencione suas áreas, ex: front-end, back-end, design], busco sempre aprender e aplicar as melhores práticas do mercado.</p>
+                        <p>Minha jornada na programação começou com [mencione algo interessante sobre sua jornada]. Acredito que a tecnologia tem o poder de transformar vidas e estou comprometido em construir produtos que façam a diferença.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Minhas Habilidades</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                        <img src="https://placehold.co/60x60/38B2AC/FFFFFF?text=HTML" alt="HTML Icon" class="mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">HTML5</h3>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                        <img src="https://placehold.co/60x60/3B82F6/FFFFFF?text=CSS" alt="CSS Icon" class="mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">CSS3</h3>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                        <img src="https://placehold.co/60x60/F59E0B/FFFFFF?text=JS" alt="JavaScript Icon" class="mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">JavaScript</h3>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                        <img src="https://placehold.co/60x60/EF4444/FFFFFF?text=React" alt="React Icon" class="mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">React</h3>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                        <img src="https://placehold.co/60x60/10B981/FFFFFF?text=Node" alt="Node.js Icon" class="mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Node.js</h3>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                        <img src="https://placehold.co/60x60/6B7280/FFFFFF?text=SQL" alt="SQL Icon" class="mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">SQL</h3>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Meus Projetos</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                        <div class="drawing-image-container">
+                            <img
+                                src="https://placehold.co/650x500/4F46E5/FFFFFF?text=Projeto+1"
+                                alt="Projeto 1"
+                                class="drawing-image"
+                                onerror="this.onerror=null;this.src='https://placehold.co/650x500/F97316/FFFFFF?text=Erro+ao+Carregar';"
+                            />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Nome do Projeto 1</h3>
+                            <p class="text-gray-600 mb-4">Uma breve descrição sobre o Projeto 1 e as tecnologias usadas.</p>
+                            <a href="#" class="text-indigo-600 hover:underline font-medium">Ver Projeto</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                        <div class="drawing-image-container">
+                            <img
+                                src="https://placehold.co/650x500/A855F7/FFFFFF?text=Projeto+2"
+                                alt="Projeto 2"
+                                class="drawing-image"
+                                onerror="this.onerror=null;this.src='https://placehold.co/650x500/F97316/FFFFFF?text=Erro+ao+Carregar';"
+                            />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Nome do Projeto 2</h3>
+                            <p class="text-gray-600 mb-4">Uma breve descrição sobre o Projeto 2 e as tecnologias usadas.</p>
+                            <a href="#" class="text-indigo-600 hover:underline font-medium">Ver Projeto</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                        <div class="drawing-image-container">
+                            <img
+                                src="https://placehold.co/650x500/EC4899/FFFFFF?text=Projeto+3"
+                                alt="Projeto 3"
+                                class="drawing-image"
+                                onerror="this.onerror=null;this.src='https://placehold.co/650x500/F97316/FFFFFF?text=Erro+ao+Carregar';"
+                            />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Nome do Projeto 3</h3>
+                            <p class="text-gray-600 mb-4">Uma breve descrição sobre o Projeto 3 e as tecnologias usadas.</p>
+                            <a href="#" class="text-indigo-600 hover:underline font-medium">Ver Projeto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Entre em Contato</h2>
+                <div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-xl">
+                    <form>
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nome:</label>
+                            <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Seu Nome Completo">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                            <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="seu.email@example.com">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Mensagem:</label>
+                            <textarea id="message" name="message" rows="6" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Sua mensagem..."></textarea>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition duration-300 transform hover:scale-105">Enviar Mensagem</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2025 [Seu Nome]. Todos os direitos reservados.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">LinkedIn</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">GitHub</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Twitter</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

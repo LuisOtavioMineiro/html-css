@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animação 3D de Imagem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define a fonte Inter para todo o documento */
+        body {
+            font-family: "Inter", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5; /* Cor de fundo suave */
+        }
+
+        /* Contêiner para a imagem, para aplicar a perspectiva */
+        .image-container {
+            perspective: 1000px; /* Define a perspectiva para o efeito 3D */
+            width: 650px; /* Largura do contêiner */
+            height: 500px; /* Altura do contêiner */
+        }
+
+        /* Estilos da imagem e da animação 3D */
+        .image-3d {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s ease-in-out; /* Transição suave para a rotação */
+            transform-style: preserve-3d; /* Permite que os elementos filhos preservem seu posicionamento 3D */
+            transform: rotateY(0deg); /* Estado inicial: sem rotação */
+            border-radius: 12px; /* Cantos arredondados */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            object-fit: cover; /* Garante que a imagem cubra o contêiner */
+        }
+
+        /* Efeito ao passar o mouse: gira a imagem em 3D */
+        .image-container:hover .image-3d {
+            transform: rotateY(180deg); /* Gira 180 graus no eixo Y */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="image-container">
+        <img
+            src="css3/img/WhatsApp Image 2025-05-28 at 20.41.56.jpeg"
+            alt="Imagem para Animação 3D"
+            class="image-3d"
+            onerror="this.onerror=null;this.src='https://placehold.co/300x200/F97316/FFFFFF?text=Erro+ao+Carregar';"
+        />
+    </div>
+</body>
+</html>
